@@ -11,7 +11,7 @@ This is a simple script that will record the users inputs until the Esc button i
 
 * ~~sys.argv as the name of the created script~~
 * drag and scroll functionality
-* ~~~3 second delay, then beep to announce recording has started.~~
+* ~~3 second delay, then beep to announce recording has started.~~
 * "Duration"- (mouse-moving) and simple time-delays both supported
 
 ### Install ###
