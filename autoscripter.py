@@ -1,7 +1,8 @@
 from pynput import mouse
 from pynput import keyboard
 import time
-
+import sys
+import subprocess
 
 class Scripter():
 
@@ -20,8 +21,8 @@ class Scripter():
             self.array.append("pyautogui.press('{}')\n".format(key))
         self.array.append("time.sleep({})\n".format(time.time()-self.start))
         self.start = time.time()
-        
-        
+
+
 
     def on_click(self,x, y, button, pressed):
         if pressed:
@@ -49,7 +50,10 @@ class Scripter():
             for entry in self.array:
                 f.write(entry)
 
-filename = "click.py"
+filename = input("What name would you like to name this script? Don't include an extension.\n")  + ".py"
+print('Recording begins after the sound plays (in 3 seconds).')
+time.sleep(3)
+subprocess.call(['/usr/bin/canberra-gtk-play','--id','message'])
 scripter = Scripter(filename)
 scripter.Listen()
 scripter.CreateScript()
